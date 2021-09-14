@@ -339,9 +339,6 @@ def json_generate(tokenId, url):
     luckyNumber = tokenId[61:63]
     batch = tokenId[63:]
 
-    print(f"Sent: {tokenId}")
-    print(f"XXXX: {type + str + agi + intl + strGain + agiGain + intGain + prim + dmg + dmgGain + armor + magicResist + exp + expGain + manaPool + manaGain + backpackSlot01 + backpackSlot02 + backpackSlot03 + backpackSlot04 + backpackSlot05 + backpackSlot06 + backpackSlot07 + backpackSlot08 + backpackSlot09 + backpackSlot10 + backpackSlot11 + backpackSlot12 + bodyType + eyeColor + hairColor + speed + speedGain + luck + luckGain + luckyNumber + batch}")
-
     formattedType = f"0x{type.upper()}"
     formattedBatch = int(batch, 16)
 

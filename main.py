@@ -32,22 +32,40 @@ def parse(request):
     return workStr
 
 
-def add_cache_control(response):
+def add_headers(response):
     # Cache response for 24 hours
     response.headers.add("Cache-Control", "public, max-age=86400")
+    response.headers.add("Access-Control-Allow-Origin", "*")
 
     return response
 
 
+def return_options():
+    headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Max-Age': '3600'
+    }
+
+    return ("", 204, headers)
+
+
 def metadata(request):
+    if request.method == 'OPTIONS':
+        return return_options()
+
     tokenId = parse(request)
 
-    return add_cache_control(
+    return add_headers(
         jsonify(json_generate(tokenId, URL)))
 
 
 def image(request):
+    if request.method == 'OPTIONS':
+        return return_options()
+
     tokenId = parse(request)
 
-    return add_cache_control(
+    return add_headers(
         Response(svg_generate(tokenId), mimetype="image/svg+xml"))
