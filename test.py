@@ -28,8 +28,7 @@ def read():
 
 tokenId = read()
 
-with open(f"out/0x{tokenId}.json", 'w') as wf:
-    wf.write(json.dumps(json_generate(tokenId, "")))
+print(json.dumps(json_generate(tokenId, "")))
 
 with open(f"out/0x{tokenId}.svg", 'w') as wf:
     wf.write(svg_generate(tokenId))
