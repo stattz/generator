@@ -344,7 +344,7 @@ def json_generate(tokenId, url):
 
     data = {
         "description": f"# Ultimate Stats NFT\nYour stats are: `{hexStr}`",
-        "external_url": f"https://stattz.github.io/nfts/{hexStr}",
+        "external_url": f"https://stattz.github.io/#/nfts/{hexStr}",
         "name": f"Batch {formattedBatch} | Type {formattedType}",
         "image": f"{url}/image?tokenId={hexStr}",
         "background_color": "202b38"
