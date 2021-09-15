@@ -12,6 +12,7 @@
 # below:
 .git
 .gitignore
-
+.devcontainer
+out
 node_modules
 #!include:.gitignore
