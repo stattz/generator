@@ -1,6 +1,7 @@
 #! /usr/local/bin/python
 
 import json
+from svg_avatar_generator import Avatar
 from svg_generator import svg_generate
 from json_generator import json_generate
 
@@ -25,6 +26,9 @@ def read():
 
     return workStr
 
+avatar = Avatar(1234)
+
+avatar.generate()
 
 tokenId = read()
 
